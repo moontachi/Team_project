@@ -126,6 +126,7 @@ tbody {
                </tr>
             </thead>
 
+         <c:set var="TheTotal" value="0"/>
             <c:forEach items="${carts }" var="carts" varStatus="status">
                <tbody>
                   <tr>
@@ -152,6 +153,7 @@ tbody {
                      <td style="vertical-align: middle;">
                         ${carts.price * carts.pqty}
                         <input type="hidden" name ="totalprice" value="${carts.price * carts.pqty}">
+                        <c:set var="TheTotal" value="${ TheTotal+(carts.price * carts.pqty)}"/>
                      </td>
                      
                      
@@ -181,9 +183,16 @@ tbody {
             </thead>
             <tbody>
                <tr>
-                  <th scope="row" style="vertical-align: middle;">￦80,000</th>
-                  <td style="vertical-align: middle;">￦2,500</td>
-                  <td style="vertical-align: middle;">￦82,500</td>
+                  <th scope="row" style="vertical-align: middle;">￦<c:out value="${TheTotal }"/></th>
+                  <c:if test="${TheTotal < 50000 }">
+               <c:set var="deliveryFee" value="2500"/>                  
+                  </c:if>
+                  <c:if test="${TheTotal >= 50000 }">
+               <c:set var="deliveryFee" value="0"/>                  
+                  </c:if>
+                  <td style="vertical-align: middle;">￦<c:out value="${deliveryFee }"/></td>
+                  
+                  <td style="vertical-align: middle;">￦${TheTotal + deliveryFee}</td>
                </tr>  
                <tr>
                   <td colspan="3">
