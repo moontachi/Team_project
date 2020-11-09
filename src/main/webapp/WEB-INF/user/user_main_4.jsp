@@ -136,7 +136,7 @@
   
 
 
-
+<%@include file="user_bot.jsp" %>
 
 
 </body> 

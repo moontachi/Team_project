@@ -28,17 +28,22 @@ body {
  
 .content {
 	align:center;
-	width: 75%;  
+	padding-left: 10vw;
+	padding-right: 10vw;   
 	margin-top: 3vh;
-	margin:	1vw auto;
+	margin: 0 auto;
+	/* margin:	1vw auto; */
 }
 .content2 {
-	width: 75%;
     margin-top: 20vh;
     margin: 9vw auto;
 }
 form {
 	align : center;
+}
+
+textarea {
+	width: 50vw;
 }
 
 </style>
@@ -83,14 +88,14 @@ form {
 			</tr>  
 
 			<tr>
-				<td><br><br><br><input type="text" name="cname" value="" vertical-align="middle"></td>
-				<td colspan="2"><textarea rows="8" cols="200" name="crecom"></textarea>
+				<td><br><br><br><input type="text" name="cname" value="" size="10"></td>
+				<td colspan="2"><textarea rows="8" cols="200" name="crecom" ></textarea>
 				</td>
 				<td align="right"><br><br><br><input type="submit" value="등록하기"></td>
 			</tr>
 
 			<tr>    
-				<td><br><br><br><input type="text" name="cname"
+				<td><br><br><br><input type="text" name="cname" size="10"
 					value="${ boardComments.get(0).getCname()}" disabled></td>
 				<td colspan="3"><textarea rows="8" cols="200" name="crecom" disabled>${ boardComments.get(0).getCrecom()}</textarea>
 				</td> 
