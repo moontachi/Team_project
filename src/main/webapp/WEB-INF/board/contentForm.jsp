@@ -54,7 +54,7 @@ textarea {
 <body>
 	<%@ include file="../admin/admin_top_4.jsp"%>
 	<div class="content">
-	<h1><p>글 내용보기</p></h1>
+	<h1>글 내용보기</h1>
 	<form action="content.bd" method="post">
 	<input type="hidden" name="cnum" value="${bean.num }">
 		<input type="hidden" name="num" value="${bean.num }">
@@ -125,7 +125,7 @@ textarea {
 	<body>
 		<%@ include file="../user/user_top_4.jsp"%>
 		<div class="content2">
-		<h1><p>글 내용보기</p></h1>
+		<h1>글 내용보기</h1>
 			<input type="hidden" name="cnum" value="${bean.num }">
 			<input type="hidden" name="num" value="${bean.num }">
 	
